@@ -26,19 +26,18 @@ class Login(QMainWindow):
                 users = json.load(f)["users"]
         except (FileNotFoundError, json.JSONDecodeError):
             users = []
-        
+
         for user in users:
             if user["username"] == username and user["password"] == password:
-                self.open_home()
+                self.open_home(username)
                 return
 
         QMessageBox.warning(self, "Lỗi", "Sai tài khoản hoặc mật khẩu!")
 
-    def open_home(self):
-        self.home_page = Home()
+    def open_home(self, username):
+        self.home_page = Home(username)
         self.home_page.show()
         self.close()
-
 
     def open_dangky(self):
         self.dangky_page = dangky()
@@ -56,7 +55,8 @@ class dangky(QMainWindow):
     def dangky_user(self):
         user = {
             "username": self.email2.text().strip(),
-            "password": self.matkhau2.text().strip()
+            "password": self.matkhau2.text().strip(),
+            "favorites": []
         }
 
         if not user["username"] or not user["password"]:
@@ -83,13 +83,16 @@ class dangky(QMainWindow):
         self.close()
 
 class Home(QMainWindow):
-    def __init__(self):
+    def __init__(self, username):
         super().__init__()
         loadUi("ui/home.ui", self)
         self.data_file = "data/data.json"
+        self.users_file = "data/users.json"
+        self.username = username
         self.load_movies()
         self.quanlybtn.clicked.connect(self.open_crud)
         self.thoatrabtn.clicked.connect(self.close)
+        self.btnFavorites.clicked.connect(self.open_favorites)
 
     def load_movies(self):
         try:
@@ -115,25 +118,100 @@ class Home(QMainWindow):
         img_label.setPixmap(pixmap.scaled(120, 120, Qt.AspectRatioMode.KeepAspectRatio))
         layout.addWidget(img_label)
 
-        id_label = QLabel(f"<b style='color:red;'>ID: {movie['id']}</b>")
-        layout.addWidget(id_label)
+        layout.addWidget(QLabel(f"<b style='color:red;'>ID: {movie['id']}</b>"))
+        layout.addWidget(QLabel(f"<b>{movie['name']}</b>"))
+        layout.addWidget(QLabel(f"Release Date: {movie['release_date']}"))
+        layout.addWidget(QLabel(f"<b style='color:orange;'>Rating: {movie['rating']}</b>"))
 
-        name_label = QLabel(f"<b>{movie['name']}</b>")
-        layout.addWidget(name_label)
-
-        release_label = QLabel(f"Release Date: {movie['release_date']}")
-        layout.addWidget(release_label)
-
-        rating_label = QLabel(f"<b style='color:orange;'>Rating: {movie['rating']}</b>")
-        layout.addWidget(rating_label)
+        btn_fav = QPushButton("thêm vào Yêu thích")
+        btn_fav.clicked.connect(lambda _, movie_id=movie["id"]: self.add_to_favorites(movie_id))
+        layout.addWidget(btn_fav)
 
         item_widget.setLayout(layout)
         return item_widget
+
+    def add_to_favorites(self, movie_id):
+        try:
+            with open(self.users_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+
+            for user in data["users"]:
+                if user["username"] == self.username:
+                    if "favorites" not in user:
+                        user["favorites"] = []
+                    if movie_id not in user["favorites"]:
+                        user["favorites"].append(movie_id)
+                        QMessageBox.information(self, "Thông báo", "Đã thêm vào yêu thích!")
+                    else:
+                        QMessageBox.information(self, "Thông báo", "Phim đã có trong yêu thích!")
+                    break
+
+            with open(self.users_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=4, ensure_ascii=False)
+
+        except Exception as e:
+            QMessageBox.warning(self, "Lỗi", str(e))
 
     def open_crud(self):
         self.crud_page = CRUDApp(self)
         self.crud_page.show()
         self.close()
+
+    def open_favorites(self):
+        self.fav_page = FavoritePage(self.username)
+        self.fav_page.show()
+
+class FavoritePage(QMainWindow):
+    def __init__(self, username):
+        super().__init__()
+        loadUi("ui/favorite.ui", self)
+        self.data_file = "data/data.json"
+        self.users_file = "data/users.json"
+        self.username = username
+        self.btnBack.clicked.connect(self.close)
+        self.load_favorites()
+
+    def load_favorites(self):
+        try:
+            with open(self.data_file, "r", encoding="utf-8") as f:
+                all_movies = json.load(f)
+            with open(self.users_file, "r", encoding="utf-8") as f:
+                users = json.load(f)["users"]
+        except:
+            all_movies = []
+            users = []
+
+        user = next((u for u in users if u["username"] == self.username), None)
+        if not user:
+            return
+
+        favorite_ids = user.get("favorites", [])
+        favorite_movies = [m for m in all_movies if m["id"] in favorite_ids]
+
+        self.listWidget.clear()
+        for movie in favorite_movies:
+            item_widget = self.create_fav_item(movie)
+            item = QListWidgetItem()
+            item.setSizeHint(item_widget.sizeHint())
+            self.listWidget.addItem(item)
+            self.listWidget.setItemWidget(item, item_widget)
+
+    def create_fav_item(self, movie):
+        item_widget = QWidget()
+        layout = QVBoxLayout()
+
+        img_label = QLabel()
+        pixmap = QPixmap(movie["img"])
+        img_label.setPixmap(pixmap.scaled(120, 120, Qt.AspectRatioMode.KeepAspectRatio))
+        layout.addWidget(img_label)
+
+        layout.addWidget(QLabel(f"<b style='color:red;'>ID: {movie['id']}</b>"))
+        layout.addWidget(QLabel(f"<b>{movie['name']}</b>"))
+        layout.addWidget(QLabel(f"Release Date: {movie['release_date']}"))
+        layout.addWidget(QLabel(f"<b style='color:orange;'>Rating: {movie['rating']}</b>"))
+
+        item_widget.setLayout(layout)
+        return item_widget
 
 class CRUDApp(QMainWindow):
     def __init__(self, home_page):

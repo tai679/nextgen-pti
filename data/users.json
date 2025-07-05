@@ -2,23 +2,30 @@
     "users": [
         {
             "username": "phamhoangtai",
-            "password": "123456"
+            "password": "123456",
+            "favorites": [
+                1
+            ]
         },
         {
             "username": "admin",
-            "password": "admin123"
+            "password": "admin123",
+            "favorites": []
         },
         {
             "username": "tahoanggiabao",
-            "password": "345"
+            "password": "345",
+            "favorites": []
         },
         {
             "username": "jjjôj",
-            "password": "123"
+            "password": "123",
+            "favorites": []
         },
         {
             "username": "ko",
-            "password": "34"
+            "password": "34",
+            "favorites": []
         }
     ]
 }

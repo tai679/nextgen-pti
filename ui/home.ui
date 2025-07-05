@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>857</width>
-    <height>583</height>
+    <height>633</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -87,7 +87,7 @@ background-color:white;</string>
        <x>30</x>
        <y>90</y>
        <width>671</width>
-       <height>421</height>
+       <height>471</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -154,7 +154,7 @@ background-color:white;</string>
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>280</y>
+       <y>270</y>
        <width>71</width>
        <height>16</height>
       </rect>
@@ -174,7 +174,7 @@ background-color:white;</string>
      <property name="geometry">
       <rect>
        <x>60</x>
-       <y>420</y>
+       <y>380</y>
        <width>71</width>
        <height>16</height>
       </rect>
@@ -225,7 +225,7 @@ background-color: rgb(192,192,192);
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>260</y>
+       <y>250</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -256,7 +256,7 @@ background-color: rgb(192,192,192);
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>400</y>
+       <y>360</y>
        <width>51</width>
        <height>51</height>
       </rect>
@@ -281,6 +281,57 @@ background-color: rgb(192,192,192);
        <width>32</width>
        <height>32</height>
       </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btnFavorites">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>450</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+border:none
+}
+QPushButton:hover {
+background-color: rgb(192,192,192);
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset>
+       <normaloff>../image/heart đen.png</normaloff>../image/heart đen.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_14">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>470</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Open Sans ExtraBold</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>favorite flim</string>
      </property>
     </widget>
    </widget>
