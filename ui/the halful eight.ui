@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>681</width>
+    <height>572</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>0</y>
+      <width>275</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#2E2E2E;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="anh">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>350</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>350</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../image/poster-phim-the-hateful-eight.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="xem">
+          <property name="font">
+           <font>
+            <family>Montserrat SemiBold</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:rgb(0, 145, 0);
+border:none;</string>
+          </property>
+          <property name="text">
+           <string>1.5m</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="danhgia">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(0, 101, 152);
+border:none;</string>
+          </property>
+          <property name="text">
+           <string>229k</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../app_registration_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../app_registration_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="thich">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(255, 85, 0);
+border:none;</string>
+          </property>
+          <property name="text">
+           <string>459k</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>0</y>
+      <width>401</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#2E2E2E;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QWidget" name="widget_3" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="tieude">
+          <property name="font">
+           <font>
+            <family>Noto Serif</family>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string>The Hateful Eight</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="nam">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string> 2015 Đạo diễn bởi Quentin Tarantino</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTextEdit" name="textEdit">
+       <property name="html">
+        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Diễn viên &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ffffff;&quot;&gt;samuel L.jackson, Kurt Russell, jennifer jason leight, walton Goggmish, Demiasn Bichir, Tim Roth, Michael Madsen, Bruce Dern, James Park, Dana Gourrier, Zoe Bell, lee Horsley, Gene Jones, Keith Jefferson, Craig Stark, Belinda Owino, Channing Tatum, Quentin Tarantino&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600; font-style:italic; color:#ffffff;&quot;&gt;Giải Thưởng Phim Đạt Được&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline; color:#ffffff;&quot;&gt;Giải Oscar (Academy Awards) 2016:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Nhạc phim xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; (Best Original Score) – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Ennio Morricone&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Nữ diễn viên phụ xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Jennifer Jason Leigh&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Quay phim xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Robert Richardson&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; text-decoration: underline; color:#ffffff;&quot;&gt;Quả cầu vàng (Golden Globe Awards) 2016:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Nhạc phim xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Ennio Morricone&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Kịch bản xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Quentin Tarantino&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Nữ diễn viên phụ xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Jennifer Jason Leigh&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ffffff;&quot;&gt;BAFTA Awards 2016:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Nhạc phim xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Ennio Morricone&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Kịch bản gốc xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Quentin Tarantino&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt; font-weight:600; color:#ffffff;&quot;&gt;Quay phim xuất sắc nhất&lt;/span&gt;&lt;span style=&quot; font-size:8pt; color:#ffffff;&quot;&gt; – &lt;/span&gt;&lt;span style=&quot; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;Robert Richardson&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt; font-style:italic; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="noidung">
+       <property name="font">
+        <font>
+         <family>Roboto Condensed</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:#FFFFFF</string>
+       </property>
+       <property name="text">
+        <string>Không ai đến đây mà không có lý do chính đáng.
+Những thợ săn tiền thưởng tìm nơi trú ẩn khỏi trận bão tuyết dữ dội và bị cuốn vào một âm mưu phản bội và lừa dối.
+
+</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

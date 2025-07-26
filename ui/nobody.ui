@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>630</width>
+    <height>539</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>281</x>
+      <y>0</y>
+      <width>349</width>
+      <height>513</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#2E2E2E;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QWidget" name="widget_3" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <family>Noto Serif</family>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string>Nobody</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>Franklin Gothic Medium</family>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:#FFFFFF;</string>
+          </property>
+          <property name="text">
+           <string> 2021 Đạo diễn bởi Ilya Naishuller </string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <family>Roboto Condensed</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color:#FFFFFF</string>
+       </property>
+       <property name="text">
+        <string>Đừng bao giờ đánh giá thấp một kẻ vô danh.
+Hutch Mansell, một ông bố ngoại ô, người chồng bị bỏ rơi, người hàng xóm vô danh — một &quot;kẻ vô danh&quot;. Khi hai tên trộm đột nhập vào nhà anh vào một đêm nọ, cơn thịnh nộ âm ỉ bấy lâu của Hutch bùng lên và đẩy anh vào con đường tàn bạo sẽ khám phá ra những bí mật đen tối mà anh đã cố gắng bỏ lại phía sau.</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>275</width>
+      <height>513</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:#2E2E2E;</string>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>350</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>350</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>../image/MV5BNmNlZDY2YTAtZGNmZS00ZDRmLThhZWQtMWUwNWQwMzUwMTY3XkEyXkFqcGc@._V1_.jpg</pixmap>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="frame">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QPushButton" name="pushButton">
+          <property name="font">
+           <font>
+            <family>Montserrat SemiBold</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color:rgb(0, 145, 0);
+border:none;</string>
+          </property>
+          <property name="text">
+           <string>735k</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(0, 101, 152);
+border:none;</string>
+          </property>
+          <property name="text">
+           <string>84k</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../app_registration_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../app_registration_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_2">
+          <property name="styleSheet">
+           <string notr="true">color:rgb(255, 85, 0);
+border:none</string>
+          </property>
+          <property name="text">
+           <string>199k</string>
+          </property>
+          <property name="icon">
+           <iconset>
+            <normaloff>../../favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</normaloff>../../favorite_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg</iconset>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -127,9 +127,17 @@ class Home(QMainWindow):
         btn_fav.clicked.connect(lambda _, movie_id=movie["id"]: self.add_to_favorites(movie_id))
         layout.addWidget(btn_fav)
 
+        btn_detail = QPushButton("Chi tiết")
+        btn_detail.clicked.connect(lambda _, movie_id=movie["id"]: self.open_detail(movie))
+        layout.addWidget(btn_detail)
+
         item_widget.setLayout(layout)
         return item_widget
-
+    
+    def open_detail(self, movie):
+        self.detail_page = DetailPage( movie)
+        self.detail_page.show()
+        
     def add_to_favorites(self, movie_id):
         try:
             with open(self.users_file, "r", encoding="utf-8") as f:
@@ -296,7 +304,22 @@ class CRUDApp(QMainWindow):
         self.save_data()
         self.load_data()
         QApplication.processEvents()
+class DetailPage(QMainWindow):
+    def __init__(self, movie):
+        super().__init__()
+        self.ui = loadUi("ui/detail.ui", self)
+    
+        self.tieude.setText(movie["name"])
+        self.nam.setText(movie["nam"])
+        self.gioi.setText(movie["gioi"])
+        self.xem.setText(movie["xem"])
+        self.thich.setText(movie["thich"])
+        self.binhluan.setText(movie["binhluan"])
+        self.img.setPixmap(QPixmap(movie["img"]))
+        self.mota.setPlainText(movie["mota"])
 
+        
+   
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     loginPage = Login()
