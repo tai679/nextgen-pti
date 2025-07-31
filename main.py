@@ -304,6 +304,7 @@ class CRUDApp(QMainWindow):
         self.save_data()
         self.load_data()
         QApplication.processEvents()
+
 class DetailPage(QMainWindow):
     def __init__(self, movie):
         super().__init__()
@@ -316,9 +317,7 @@ class DetailPage(QMainWindow):
         self.thich.setText(movie["thich"])
         self.binhluan.setText(movie["binhluan"])
         self.img.setPixmap(QPixmap(movie["img"]))
-        self.mota.setPlainText(movie["mota"])
-
-        
+        self.mota.setHtml(movie["mota"])
    
 if __name__ == "__main__":
     app = QApplication(sys.argv)
