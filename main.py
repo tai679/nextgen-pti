@@ -89,18 +89,27 @@ class Home(QMainWindow):
         self.data_file = "data/data.json"
         self.users_file = "data/users.json"
         self.username = username
+
+        self.all_movies = []
         self.load_movies()
+
         self.quanlybtn.clicked.connect(self.open_crud)
         self.thoatrabtn.clicked.connect(self.close)
         self.btnFavorites.clicked.connect(self.open_favorites)
+        self.btnSearch.clicked.connect(self.search_movies)
 
     def load_movies(self):
+        """Load toàn bộ phim từ file JSON và hiển thị"""
         try:
             with open(self.data_file, "r", encoding="utf-8") as f:
-                movies = json.load(f)
+                self.all_movies = json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
-            movies = []
+            self.all_movies = []
 
+        self.display_movies(self.all_movies)
+
+    def display_movies(self, movies):
+        """Hiển thị danh sách phim ra listWidget"""
         self.listWidget.clear()
         for movie in movies:
             item_widget = self.create_movies_item(movie)
@@ -108,6 +117,16 @@ class Home(QMainWindow):
             item.setSizeHint(item_widget.sizeHint())
             self.listWidget.addItem(item)
             self.listWidget.setItemWidget(item, item_widget)
+
+    def search_movies(self):
+        """Lọc phim theo tên"""
+        keyword = self.txtSearch.text().strip().lower()
+        if not keyword:
+            self.display_movies(self.all_movies)
+            return
+
+        filtered = [m for m in self.all_movies if keyword in m["name"].lower()]
+        self.display_movies(filtered)
 
     def create_movies_item(self, movie):
         item_widget = QWidget()
@@ -123,16 +142,17 @@ class Home(QMainWindow):
         layout.addWidget(QLabel(f"Release Date: {movie['release_date']}"))
         layout.addWidget(QLabel(f"<b style='color:orange;'>Rating: {movie['rating']}</b>"))
 
-        btn_fav = QPushButton("thêm vào Yêu thích")
+        btn_fav = QPushButton("Thêm vào Yêu thích")
         btn_fav.clicked.connect(lambda _, movie_id=movie["id"]: self.add_to_favorites(movie_id))
         layout.addWidget(btn_fav)
 
         btn_detail = QPushButton("Chi tiết")
-        btn_detail.clicked.connect(lambda _, movie_id=movie["id"]: self.open_detail(movie))
+        btn_detail.clicked.connect(lambda _, movie_data=movie: self.open_detail(movie_data))
         layout.addWidget(btn_detail)
 
         item_widget.setLayout(layout)
         return item_widget
+
     
     def open_detail(self, movie):
         self.detail_page = DetailPage( movie)
@@ -322,5 +342,5 @@ class DetailPage(QMainWindow):
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     loginPage = Login()
-    loginPage.show()
+    loginPage.show() 
     sys.exit(app.exec())

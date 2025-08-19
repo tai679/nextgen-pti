@@ -34,6 +34,24 @@
         {
             "username": "a",
             "password": "a",
+            "favorites": [
+                1,
+                2
+            ]
+        },
+        {
+            "username": "s",
+            "password": "s",
+            "favorites": []
+        },
+        {
+            "username": "a",
+            "password": "a",
+            "favorites": []
+        },
+        {
+            "username": "a",
+            "password": "a",
             "favorites": []
         }
     ]
