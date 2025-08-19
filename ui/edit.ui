@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>591</width>
-    <height>564</height>
+    <width>1274</width>
+    <height>635</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>591</width>
-      <height>521</height>
+      <width>1271</width>
+      <height>591</height>
      </rect>
     </property>
     <widget class="QListWidget" name="listWidget">
@@ -50,7 +50,7 @@
      <property name="geometry">
       <rect>
        <x>450</x>
-       <y>320</y>
+       <y>420</y>
        <width>140</width>
        <height>40</height>
       </rect>
@@ -63,7 +63,7 @@
      <property name="geometry">
       <rect>
        <x>450</x>
-       <y>390</y>
+       <y>480</y>
        <width>140</width>
        <height>40</height>
       </rect>
@@ -92,7 +92,7 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>390</y>
+       <y>480</y>
        <width>140</width>
        <height>40</height>
       </rect>
@@ -131,13 +131,162 @@
      <property name="geometry">
       <rect>
        <x>280</x>
-       <y>320</y>
+       <y>420</y>
        <width>140</width>
        <height>40</height>
       </rect>
      </property>
      <property name="text">
       <string>Thêm</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="giai">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>240</y>
+       <width>441</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Giải Thưởng</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="dienvien">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>150</y>
+       <width>441</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Diễn Viên</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="dao">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>100</y>
+       <width>361</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Đạo Diễn </string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="tenphim">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>50</y>
+       <width>361</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="inputMask">
+      <string/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string>Tên Phim</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="mota">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>330</y>
+       <width>441</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Mô tả </string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="anhthu">
+     <property name="geometry">
+      <rect>
+       <x>1080</x>
+       <y>50</y>
+       <width>150</width>
+       <height>200</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="chonhinh">
+     <property name="geometry">
+      <rect>
+       <x>1120</x>
+       <y>270</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>chọn ảnh </string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="binhluan">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>420</y>
+       <width>441</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Bình Luận</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="luotxem">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>510</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Lượt Xem</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="thich">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>540</y>
+       <width>221</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="placeholderText">
+      <string>Lượt Thích</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="comboGenre_2">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>310</y>
+       <width>69</width>
+       <height>22</height>
+      </rect>
      </property>
     </widget>
    </widget>
@@ -147,7 +296,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>591</width>
+     <width>1274</width>
      <height>21</height>
     </rect>
    </property>

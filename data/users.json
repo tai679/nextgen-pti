@@ -3,18 +3,12 @@
         {
             "username": "phamhoangtai",
             "password": "123456",
-            "favorites": [
-                1,
-                3,
-                9
-            ]
+            "favorites": []
         },
         {
             "username": "admin",
             "password": "admin123",
-            "favorites": [
-                5
-            ]
+            "favorites": []
         },
         {
             "username": "tahoanggiabao",
@@ -34,24 +28,11 @@
         {
             "username": "a",
             "password": "a",
-            "favorites": [
-                1,
-                2
-            ]
+            "favorites": []
         },
         {
             "username": "s",
             "password": "s",
-            "favorites": []
-        },
-        {
-            "username": "a",
-            "password": "a",
-            "favorites": []
-        },
-        {
-            "username": "a",
-            "password": "a",
             "favorites": []
         }
     ]
