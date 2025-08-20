@@ -1,15 +1,18 @@
 [
     {
         "id": 1,
-        "tenphim": "dd",
-        "dao": "a",
-        "dienvien": "aa",
-        "giai": "aa",
-        "mota": "aa",
-        "luotxem": "12",
-        "binhluan": "aâ",
-        "thich": "121",
-        "img": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/poster-phim-blade-runner.jpg",
+        "txtName": "moo",
+        "txtReleaseDate": "21-10-2011",
+        "txtRating": "8.2",
+        "tenphim": "moon",
+        "dao": "Duncan Jones (con trai của David Bowie)",
+        "dienvien": "Sam Rockwell, Kevin Spacey (giọng nói), Dominique McElligott, Rosie Shaw, Adrienne Shaw, Matt Berry, Benedict Wong, Malcolm Stewart",
+        "giai": "🏆 Các giải thưởng nổi bật mà \"Moon\" (2009) đạt được:\n🎖️ Giải BAFTA 2010:\n🏅 Phim đầu tay xuất sắc nhất của đạo diễn, biên kịch hoặc nhà sản xuất Anh – Duncan Jones\n🏆 Giải Hugo Awards:\n🏅 Phim điện ảnh hay nhất\n🏆 Giải British Independent Film Awards (BIFA):\n🏅 Phim độc lập Anh hay nhất\n🏅 Nam diễn viên chính xuất sắc nhất – Sam Rockwell\n🏆 Giải Saturn Awards:\n🏅 Nam diễn viên chính xuất sắc nhất – Sam Rockwell (đề cử)\n🏆 Giải Sundance Film Festival (2009):\n✨ Phim được đón nhận tích cực, giúp khẳng định tên tuổi của đạo diễn Duncan Jones dù không đoạt giải chính thức.",
+        "mota": "Bối cảnh phim diễn ra trong tương lai gần, khi con người khai thác năng lượng sạch từ Mặt Trăng. Sam Bell (Sam Rockwell) là kỹ sư duy nhất làm việc tại trạm khai thác Helium-3 trên Mặt Trăng, chuẩn bị kết thúc hợp đồng 3 năm và trở về Trái Đất.\nTrong thời gian làm việc một mình, Sam bắt đầu gặp ảo giác và phát hiện ra những bí mật động trời về chính mình và nhiệm vụ mà anh đang thực hiện. Trợ lý duy nhất của anh là GERTY, một trí tuệ nhân tạo (lồng tiếng bởi Kevin Spacey).",
+        "luotxem": "123k",
+        "binhluan": "asa\nsa\ná\n\ns\nsa",
+        "thich": "738k",
+        "img": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/poster-phim-moon.jpg",
         "theloai": "Khoa học viễn tưởng"
     }
 ]

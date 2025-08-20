@@ -4,6 +4,7 @@ from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QPushButton, QLis
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi
+import os
 
 class Login(QMainWindow):
     def __init__(self):
@@ -53,13 +54,11 @@ class dangky(QMainWindow):
         self.btnback.clicked.connect(self.return_to_login)
 
     def dangky_user(self):
-        user = {
-            "username": self.email2.text().strip(),
-            "password": self.matkhau2.text().strip(),
-            "favorites": []
-        }
+        username = self.email2.text().strip()
+        password = self.matkhau2.text().strip()
 
-        if not user["username"] or not user["password"]:
+        if not username or not password:
+            QMessageBox.warning(self, "Lỗi", "Vui lòng nhập đầy đủ thông tin!")
             return
 
         try:
@@ -68,14 +67,28 @@ class dangky(QMainWindow):
         except (FileNotFoundError, json.JSONDecodeError):
             data = {"users": []}
 
-        data["users"].append(user)
+    # Kiểm tra user đã tồn tại chưa
+        for user in data["users"]:
+            if user["username"] == username:
+                QMessageBox.warning(self, "Lỗi", "Tài khoản đã tồn tại!")
+                return
+
+    # Nếu chưa tồn tại thì thêm mới
+        new_user = {
+            "username": username,
+            "password": password,
+            "favorites": []
+        }
+        data["users"].append(new_user)
 
         with open(self.data_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=4, ensure_ascii=False)
 
+        QMessageBox.information(self, "Thành công", "Đăng ký thành công! Hãy đăng nhập.")
         self.email2.clear()
         self.matkhau2.clear()
         self.return_to_login()
+
 
     def return_to_login(self):
         self.login_page = Login()
@@ -157,6 +170,7 @@ class Home(QMainWindow):
         layout.addWidget(QLabel(f"<b style='color:red;'>ID: {movie.get('id', '')}</b>"))
         layout.addWidget(QLabel(f"<b>{movie.get('tenphim', 'Không rõ')}</b>"))
         layout.addWidget(QLabel(f"Đạo diễn: {movie.get('dao', 'Không rõ')}"))
+        layout.addWidget(QLabel(f"ngày phát hành: {movie.get('txtReleaseDate', 'Không rõ')}"))
         layout.addWidget(QLabel(f"<b style='color:orange;'>Lượt xem: {movie.get('luotxem', 0)}</b>"))
 
         # Kiểm tra phim đã trong favorites chưa
@@ -229,7 +243,7 @@ class Home(QMainWindow):
             with open(self.users_file, "w", encoding="utf-8") as f:
                 json.dump(data, f, indent=4, ensure_ascii=False)
 
-            self.load_movies()  # Refresh để đổi nút
+            self.load_movies()
 
         except Exception as e:
             QMessageBox.warning(self, "Lỗi", str(e))
@@ -342,6 +356,9 @@ class CRUDApp(QMainWindow):
             "Hoạt hình", "Khoa học viễn tưởng"
         ])
 
+        # Khi click chọn 1 item trong list => hiển thị ra form
+        self.listWidget.itemClicked.connect(self.load_selected_item)
+
         self.load_data()
 
     def return_home(self):
@@ -383,6 +400,9 @@ class CRUDApp(QMainWindow):
     def add_item(self):
         movie_data = {
             "id": max([item["id"] for item in self.data], default=0) + 1,
+            "txtName": self.txtName.text().strip(),
+            "txtReleaseDate": self.txtReleaseDate.text().strip(),
+            "txtRating": self.txtRating.text().strip(),
             "tenphim": self.tenphim.text().strip(),
             "dao": self.dao.text().strip(),
             "dienvien": self.dienvien.toPlainText().strip(),
@@ -392,7 +412,7 @@ class CRUDApp(QMainWindow):
             "binhluan": self.binhluan.toPlainText().strip(),
             "thich": self.thich.text().strip(),
             "img": self.selected_image_path if self.selected_image_path else "",
-            "theloai": self.comboGenre_2.currentText()  # << thêm thể loại
+            "theloai": self.comboGenre_2.currentText()
         }
 
         if not movie_data["tenphim"]:
@@ -408,37 +428,56 @@ class CRUDApp(QMainWindow):
         if selected == -1:
             return
 
-        self.data[selected]["tenphim"] = self.tenphim.text().strip()
-        self.data[selected]["dao"] = self.dao.text().strip()
-        self.data[selected]["dienvien"] = self.dienvien.toPlainText().strip()
-        self.data[selected]["giai"] = self.giai.toPlainText().strip()
-        self.data[selected]["mota"] = self.mota.toPlainText().strip()
-        self.data[selected]["luotxem"] = self.luotxem.text().strip()
-        self.data[selected]["binhluan"] = self.binhluan.toPlainText().strip()
-        self.data[selected]["thich"] = self.thich.text().strip()
+        inputs = {
+            "txtName": self.txtName.text().strip(),
+            "txtReleaseDate": self.txtReleaseDate.text().strip(),
+            "txtRating": self.txtRating.text().strip(),
+            "tenphim": self.tenphim.text().strip(),
+            "dao": self.dao.text().strip(),
+            "dienvien": self.dienvien.toPlainText().strip(),
+            "giai": self.giai.toPlainText().strip(),
+            "mota": self.mota.toPlainText().strip(),
+            "luotxem": self.luotxem.text().strip(),
+            "binhluan": self.binhluan.toPlainText().strip(),
+            "thich": self.thich.text().strip(),
+            "theloai": self.comboGenre_2.currentText()
+        }
+
+        for key, value in inputs.items():
+            if value:
+                self.data[selected][key] = value
+
         if self.selected_image_path:
             self.data[selected]["img"] = self.selected_image_path
-
-        # Cập nhật thể loại
-        self.data[selected]["theloai"] = self.comboGenre_2.currentText()
 
         self.save_data()
         self.load_data()
         QApplication.processEvents()
-        self.clear_inputs()
 
     def delete_item(self):
         selected = self.listWidget.currentRow()
         if selected == -1:
             return
 
-        self.data.pop(selected)
-        self.save_data()
-        self.load_data()
-        QApplication.processEvents()
+        reply = QMessageBox.question(
+            self,
+            "Xác nhận xoá",
+            "Bạn có chắc chắn muốn xoá mục này không?",
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+            QMessageBox.StandardButton.No
+        )
+
+        if reply == QMessageBox.StandardButton.Yes:
+            self.data.pop(selected)
+            self.save_data()
+            self.load_data()
+            QApplication.processEvents()
 
     def clear_inputs(self):
         self.tenphim.clear()
+        self.txtName.clear()
+        self.txtReleaseDate.clear()
+        self.txtRating.clear()
         self.dao.clear()
         self.dienvien.clear()
         self.giai.clear()
@@ -447,8 +486,39 @@ class CRUDApp(QMainWindow):
         self.binhluan.clear()
         self.thich.clear()
         self.anhthu.clear()
-        self.comboGenre_2.setCurrentIndex(0)  # reset về thể loại đầu
+        self.comboGenre_2.setCurrentIndex(0)
         self.selected_image_path = None
+
+    def load_selected_item(self):
+        """Hiển thị dữ liệu phim đã chọn ra form để chỉnh sửa"""
+        selected = self.listWidget.currentRow()
+        if selected == -1:
+            return
+
+        movie = self.data[selected]
+
+        self.tenphim.setText(movie.get("tenphim", ""))
+        self.txtName.setText(movie.get("txtName", ""))
+        self.txtReleaseDate.setText(movie.get("txtReleaseDate", ""))
+        self.txtRating.setText(movie.get("txtRating", ""))
+        self.dao.setText(movie.get("dao", ""))
+        self.dienvien.setPlainText(movie.get("dienvien", ""))
+        self.giai.setPlainText(movie.get("giai", ""))
+        self.mota.setPlainText(movie.get("mota", ""))
+        self.luotxem.setText(movie.get("luotxem", ""))
+        self.binhluan.setPlainText(movie.get("binhluan", ""))
+        self.thich.setText(movie.get("thich", ""))
+        self.comboGenre_2.setCurrentText(movie.get("theloai", "Hành động"))
+
+        # Load ảnh
+        img_path = movie.get("img", "")
+        if img_path and os.path.exists(img_path):
+            pixmap = QPixmap(img_path).scaled(150, 200)
+            self.anhthu.setPixmap(pixmap)
+            self.selected_image_path = img_path
+        else:
+            self.anhthu.clear()
+            self.selected_image_path = None
 
 
 class DetailPage(QMainWindow):
