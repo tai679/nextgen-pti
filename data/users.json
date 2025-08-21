@@ -39,6 +39,11 @@
             "username": "a",
             "password": "a",
             "favorites": []
+        },
+        {
+            "username": "y",
+            "password": "y",
+            "favorites": []
         }
     ]
 }
