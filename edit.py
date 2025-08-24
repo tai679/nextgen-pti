@@ -22,7 +22,7 @@ class CRUDApp(QMainWindow):
         # Thêm thể loại vào combo box
         self.comboGenre_2.addItems([
             "Hành động", "Kinh dị", "Tình cảm",
-            "Hoạt hình", "Khoa học viễn tưởng", "Trinh Thám"
+            "Hoạt hình", "Khoa học viễn tưởng", "Trinh Thám","hài","hài tâm linh"
         ])
 
         # Khi click chọn 1 item trong list => hiển thị ra form

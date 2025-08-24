@@ -24,7 +24,7 @@ class Home(QMainWindow):
         self.comboGenreFilter.addItem("Tất cả")
         self.comboGenreFilter.addItems([
             "Hành động", "Kinh dị", "Tình cảm", 
-            "Hoạt hình", "Khoa học viễn tưởng","trinh thám"
+            "Hoạt hình", "Khoa học viễn tưởng","trinh thám","hài","hài tâm linh"
         ])
         self.comboGenreFilter.currentIndexChanged.connect(self.filter_by_category)
 
@@ -184,8 +184,9 @@ class Home(QMainWindow):
 
     def open_favorites(self):
         from fav import FavoritePage
-        self.fav_page = FavoritePage(self.username, self.users_file, self.data_file)
+        self.fav_page = FavoritePage(self.username, self.users_file, self.data_file, self)
         self.fav_page.show()
+        self.close()
 
 
 class hoiPage(QMainWindow):

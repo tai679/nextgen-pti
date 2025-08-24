@@ -29,7 +29,8 @@
             "username": "a",
             "password": "a",
             "favorites": [
-                1
+                4,
+                2
             ]
         },
         {
@@ -45,6 +46,11 @@
         {
             "username": "y",
             "password": "y",
+            "favorites": []
+        },
+        {
+            "username": "phamhoangtai123",
+            "password": "234",
             "favorites": []
         }
     ]

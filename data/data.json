@@ -32,5 +32,37 @@
         "img": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/poster-phim-jurassic-park.jpg",
         "theloai": "Khoa học viễn tưởng",
         "rating": 5
+    },
+    {
+        "id": 3,
+        "txtName": "Jaws(1975)",
+        "txtReleaseDate": "20-6-1975",
+        "rating": 4,
+        "tenphim": "Jaws(1975)",
+        "dao": "Steven Spielberg",
+        "dienvien": "Roy Scheider, Robert Shaw, Richard Dreyfuss,\nLorraine Gary, Murray Hamilton",
+        "giai": "🏆 Các giải thưởng nổi bật mà \"Jaws\" đạt được:\n🏆 Oscar (Academy Awards) 1976:\n🏅 Biên tập phim xuất sắc nhất\n🏅 Âm thanh xuất sắc nhất\n🏅 Nhạc phim gốc xuất sắc nhất – John Williams\n❗ Đề cử thêm:\n– Phim xuất sắc nhất (Best Picture)\nNhưng thua trước One Flew Over the Cuckoo’s Nest\n\n🏆 Giải Quả Cầu Vàng (Golden Globe Awards):\n🏅 Nhạc phim hay nhất – John Williams\nĐề cử các hạng mục: Đạo diễn, Phim chính kịch, Biên kịch...\n\n🏆 Giải Grammy 1976:\n🏅 Album nhạc phim xuất sắc nhất – John Williams\n\n🏆 Hiệp hội biên tập âm thanh Hoa Kỳ (Golden Reel Awards):\n🏅 Biên tập âm thanh xuất sắc nhất",
+        "mota": "Câu chuyện xoay quanh một thị trấn ven biển nhỏ bị khủng bố bởi một con cá mập trắng khổng lồ. Cảnh sát trưởng Brody, cùng một chuyên gia hải dương học và một thợ săn cá mập, phải hợp lực để săn lùng con quái vật trước khi nó tiếp tục tấn công người dân.",
+        "luotxem": "2.2m",
+        "binhluan": "Review by Karsten: glad sharks aren’t real\n\nReview by Matt Singer: The tragic story of a bunch of alcoholics who hunt down and murder a fish for the crime of being really hungry.\n\nReview by James (Schaffrillas): Reminds me of Shark Tale (2004)",
+        "thich": "576k",
+        "img": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/poster-phim-jaws.jpg",
+        "theloai": "Kinh dị"
+    },
+    {
+        "id": 4,
+        "txtName": "Nhà Gia Tiên (The Ancestral Home)",
+        "txtReleaseDate": "21-2-2025",
+        "rating": 5,
+        "tenphim": "Nhà Gia Tiên (The Ancestral Home)",
+        "dao": "Huỳnh Lập",
+        "dienvien": "Phương Mỹ Chi,Huỳnh Lập – vai Gia Minh,NSƯT Hạnh Thuý\nNSƯT Huỳnh Đông\nĐào Anh Tuấn – vào vai ông nộ\nPuka\nKiều Linh – vai cô Tư \nTrác Thuý Miêu\nLê Nam – vai chú Ba \nChí Tâm – vai Phát Phì, bạn thân của Mỹ Tiên\nNguyễn Anh Tú\nVà nhiều nghệ sĩ viên gạo cội khác như NSƯT Mạnh Dung, NSƯT Thanh Dậu, NS Thanh Hiền",
+        "giai": "Gần 100 tỷ trong tuần đầu; vượt mốc 200 tỷ sau 3 tuần, lọt top 10 phim việt nam năn khách nhất",
+        "mota": "Cốt truyện: Mỹ Tiên (Phương Mỹ Chi) – một nhà sáng tạo nội dung thế hệ Gen Z, vốn không tin vào tâm linh – trở về căn nhà gia tiên. Tại đây, cô bất ngờ gặp lại hồn ma người anh trai đã mất, Gia Minh (Huỳnh Lập). Họ cùng lên kế hoạch giữ lại căn nhà trước áp lực tranh chấp từ họ hàng, đồng thời giải mã nhiều bí mật động trời và hoàn thành di nguyện để hồn Ma anh được siêu thoát.",
+        "luotxem": "385k",
+        "binhluan": "",
+        "thich": "118k",
+        "img": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/nhà gia tiên.jpg",
+        "theloai": "hài tâm linh"
     }
 ]

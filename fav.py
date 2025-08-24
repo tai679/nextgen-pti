@@ -1,21 +1,26 @@
-import sys
 import json
 from PyQt6.QtWidgets import QVBoxLayout, QLabel, QPushButton, QListWidgetItem, QMainWindow, QWidget
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi
 from deta import DetailPage
-import os
 
 class FavoritePage(QMainWindow):
-    def __init__(self, username, users_file, data_file):
+    def __init__(self, username, users_file, data_file, home_page):
         super().__init__()
         loadUi("ui/favorite.ui", self)
+        self.home_page = home_page
         self.data_file = "data/data.json"
         self.users_file = "data/users.json"
         self.username = username
-        self.btnBack.clicked.connect(self.close)
+
+        self.btnBack.clicked.connect(self.return_home)
         self.load_favorites()
+
+    def return_home(self):
+        self.close()
+        self.home_page.load_movies()
+        self.home_page.show()
 
     def open_detail(self, movie):
         with open("data/data.json", "r", encoding="utf-8") as f:
@@ -60,8 +65,12 @@ class FavoritePage(QMainWindow):
 
         layout.addWidget(QLabel(f"<b style='color:red;'>ID: {movie['id']}</b>"))
         layout.addWidget(QLabel(f"<b>{movie['tenphim']}</b>"))
-        layout.addWidget(QLabel(f"dao: {movie['dao']}"))
-        layout.addWidget(QLabel(f"<b style='color:orange;'>luotxem: {movie['luotxem']}</b>"))
+        layout.addWidget(QLabel(f"đạo diễn: {movie['dao']}"))
+        layout.addWidget(QLabel(f"<b style='color:orange;'>luợt xem: {movie['luotxem']}</b>"))
+        rating = movie.get("rating", 0)
+        stars = "⭐" * int(rating) if rating else "Chưa có đánh giá"
+        layout.addWidget(QLabel(f"Đánh giá: {stars}"))
+
 
         btn_detail = QPushButton("Xem chi tiết")
         btn_detail.clicked.connect(lambda _, m=movie: self.open_detail(m))

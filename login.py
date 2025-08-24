@@ -27,6 +27,7 @@ class Login(QMainWindow):
 
         for user in users:
             if user["username"] == username and user["password"] == password:
+                QMessageBox.information(self, "Thành công", "Đăng nhập thành công!")
                 self.open_home(username)
                 return
 

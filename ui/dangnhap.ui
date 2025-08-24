@@ -172,7 +172,7 @@
       </rect>
      </property>
      <property name="cursor">
-      <cursorShape>ArrowCursor</cursorShape>
+      <cursorShape>IBeamCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color:white;
