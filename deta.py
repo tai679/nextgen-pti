@@ -1,6 +1,6 @@
 import sys
 import json
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QPushButton, QListWidget, QListWidgetItem, QMainWindow, QWidget, QMessageBox, QFileDialog
+from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi

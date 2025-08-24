@@ -1,8 +1,6 @@
-import sys
 import json
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QPushButton, QListWidget, QListWidgetItem, QMainWindow, QWidget, QMessageBox, QFileDialog
+from PyQt6.QtWidgets import QApplication, QListWidgetItem, QMainWindow, QMessageBox, QFileDialog
 from PyQt6.QtGui import QPixmap
-from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi
 import os
 
@@ -29,6 +27,7 @@ class CRUDApp(QMainWindow):
 
         # Khi click chọn 1 item trong list => hiển thị ra form
         self.listWidget.itemClicked.connect(self.load_selected_item)
+        self.listWidget.itemDoubleClicked.connect(self.clear_inputs)
 
         self.load_data()
 
@@ -56,7 +55,8 @@ class CRUDApp(QMainWindow):
         self.listWidget.clear()
         for item in self.data:
             self.listWidget.addItem(QListWidgetItem(
-                f"{item.get('id', '')}: {item.get('tenphim', '')} - {item.get('dao', '')} - {item.get('luotxem', '0')} views"
+                f"{item.get('id', '')}: {item.get('tenphim', '')} - {item.get('dao', '')} - {item.get('luotxem', '0')} views" 
+                f" - {item.get('thich', '0')} likes"
             ))
 
         QApplication.processEvents()
@@ -73,7 +73,7 @@ class CRUDApp(QMainWindow):
             "id": max([item["id"] for item in self.data], default=0) + 1,
             "txtName": self.txtName.text().strip(),
             "txtReleaseDate": self.txtReleaseDate.text().strip(),
-            "txtRating": self.txtRating.text().strip(),
+            "rating": self.ratingComboBox.currentIndex() + 1,
             "tenphim": self.tenphim.text().strip(),
             "dao": self.dao.text().strip(),
             "dienvien": self.dienvien.toPlainText().strip(),
@@ -94,6 +94,7 @@ class CRUDApp(QMainWindow):
         self.load_data()
         self.clear_inputs()
 
+
     def update_item(self):
         selected = self.listWidget.currentRow()
         if selected == -1:
@@ -102,20 +103,20 @@ class CRUDApp(QMainWindow):
         inputs = {
             "txtName": self.txtName.text().strip(),
             "txtReleaseDate": self.txtReleaseDate.text().strip(),
-            "txtRating": self.txtRating.text().strip(),
+            "rating": self.ratingComboBox.currentIndex() + 1,
             "tenphim": self.tenphim.text().strip(),
             "dao": self.dao.text().strip(),
             "dienvien": self.dienvien.toPlainText().strip(),
             "giai": self.giai.toPlainText().strip(),
             "mota": self.mota.toPlainText().strip(),
             "luotxem": self.luotxem.text().strip(),
-            "binhluan": self.binhluan.toPlainText().strip(),
+                "binhluan": self.binhluan.toPlainText().strip(),
             "thich": self.thich.text().strip(),
             "theloai": self.comboGenre_2.currentText()
         }
 
         for key, value in inputs.items():
-            if value:
+            if value or key == "rating":  # luôn cập nhật rating
                 self.data[selected][key] = value
 
         if self.selected_image_path:
@@ -124,6 +125,7 @@ class CRUDApp(QMainWindow):
         self.save_data()
         self.load_data()
         QApplication.processEvents()
+
 
     def delete_item(self):
         selected = self.listWidget.currentRow()
@@ -180,6 +182,9 @@ class CRUDApp(QMainWindow):
         self.binhluan.setPlainText(movie.get("binhluan", ""))
         self.thich.setText(movie.get("thich", ""))
         self.comboGenre_2.setCurrentText(movie.get("theloai", "Hành động"))
+
+        rating = movie.get("rating", 1)
+        self.ratingComboBox.setCurrentIndex(rating - 1)
 
         # Load ảnh
         img_path = movie.get("img", "")

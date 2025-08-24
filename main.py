@@ -1,11 +1,8 @@
-import sys
 import json
-from PyQt6.QtWidgets import QApplication, QVBoxLayout, QLabel, QPushButton, QListWidget, QListWidgetItem, QMainWindow, QWidget, QMessageBox, QFileDialog
+from PyQt6.QtWidgets import QVBoxLayout, QLabel, QPushButton, QListWidgetItem, QMainWindow, QWidget, QMessageBox
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi
-import os
-
 
 class Home(QMainWindow):
     def __init__(self, username):
@@ -24,7 +21,7 @@ class Home(QMainWindow):
         self.btnSearch.clicked.connect(self.search_movies)
         self.hoi.clicked.connect(self.open_hoi)
 
-        self.comboGenreFilter.addItem("Tất cả")  # để chọn xem tất cả
+        self.comboGenreFilter.addItem("Tất cả")
         self.comboGenreFilter.addItems([
             "Hành động", "Kinh dị", "Tình cảm", 
             "Hoạt hình", "Khoa học viễn tưởng","trinh thám"
@@ -82,8 +79,11 @@ class Home(QMainWindow):
         layout.addWidget(QLabel(f"<b style='color:red;'>ID: {movie.get('id', '')}</b>"))
         layout.addWidget(QLabel(f"<b>{movie.get('tenphim', 'Không rõ')}</b>"))
         layout.addWidget(QLabel(f"Đạo diễn: {movie.get('dao', 'Không rõ')}"))
-        layout.addWidget(QLabel(f"ngày phát hành: {movie.get('txtReleaseDate', 'Không rõ')}"))
+        layout.addWidget(QLabel(f"Ngày phát hành: {movie.get('txtReleaseDate', 'Không rõ')}"))
         layout.addWidget(QLabel(f"<b style='color:orange;'>Lượt xem: {movie.get('luotxem', 0)}</b>"))
+        rating = movie.get("rating", 0)
+        stars = "⭐" * int(rating) if rating else "Chưa có đánh giá"
+        layout.addWidget(QLabel(f"Đánh giá: {stars}"))
 
         # Kiểm tra phim đã trong favorites chưa
         in_favorites = False
@@ -113,6 +113,7 @@ class Home(QMainWindow):
 
         item_widget.setLayout(layout)
         return item_widget
+
 
     def add_to_favorites(self, movie_id):
         try:

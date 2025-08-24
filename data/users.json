@@ -28,7 +28,9 @@
         {
             "username": "a",
             "password": "a",
-            "favorites": []
+            "favorites": [
+                1
+            ]
         },
         {
             "username": "s",
