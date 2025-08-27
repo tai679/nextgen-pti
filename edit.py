@@ -160,6 +160,7 @@ class CRUDApp(QMainWindow):
         self.thich.clear()
         self.anhthu.clear()
         self.comboGenre_2.setCurrentIndex(0)
+        self.ratingComboBox.setCurrentIndex(0)
         self.selected_image_path = None
 
     def load_selected_item(self):

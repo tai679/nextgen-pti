@@ -1,57 +1,54 @@
 {
     "users": [
         {
-            "username": "phamhoangtai",
-            "password": "123456",
-            "favorites": []
-        },
-        {
             "username": "admin",
             "password": "admin123",
-            "favorites": []
+            "favorites": [
+                2,
+                5
+            ],
+            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/199368.jpg"
         },
         {
-            "username": "tahoanggiabao",
-            "password": "345",
-            "favorites": []
-        },
-        {
-            "username": "jjjôj",
-            "password": "123",
-            "favorites": []
-        },
-        {
-            "username": "ko",
+            "username": "tahoang",
             "password": "34",
-            "favorites": []
+            "favorites": [
+                1,
+                5
+            ],
+            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/thumb-1920-88940.jpg"
+        },
+        {
+            "username": "b",
+            "password": "b",
+            "favorites": [
+                4,
+                2,
+                5
+            ]
         },
         {
             "username": "a",
             "password": "a",
             "favorites": [
-                4,
-                2
-            ]
-        },
-        {
-            "username": "s",
-            "password": "s",
-            "favorites": []
-        },
-        {
-            "username": "a",
-            "password": "a",
-            "favorites": []
-        },
-        {
-            "username": "y",
-            "password": "y",
-            "favorites": []
+                1
+            ],
+            "avatar": "C:/Users/Tai/Downloads/anh nen/7aed024dfd2af9cee0d8271b6a10d039.jpg"
         },
         {
             "username": "phamhoangtai123",
             "password": "234",
             "favorites": []
+        },
+        {
+            "username": "phamhoangtai",
+            "password": "21112011",
+            "favorites": [
+                4,
+                5,
+                3
+            ],
+            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/rong.jpg"
         }
     ]
 }

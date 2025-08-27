@@ -1,10 +1,7 @@
-import sys
 import json
 from PyQt6.QtWidgets import QMainWindow, QMessageBox
 from PyQt6.QtGui import QPixmap
-from PyQt6.QtCore import Qt
 from PyQt6.uic import loadUi
-import os
 
 class DetailPage(QMainWindow):
     def __init__(self, movie, all_movies, data_file):

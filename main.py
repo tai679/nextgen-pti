@@ -18,6 +18,7 @@ class Home(QMainWindow):
         self.quanlybtn.clicked.connect(self.open_crud)
         self.thoatrabtn.clicked.connect(self.return_to_login)  
         self.btnFavorites.clicked.connect(self.open_favorites)
+        self.btnProfile.clicked.connect(self.open_profil)
         self.btnSearch.clicked.connect(self.search_movies)
         self.hoi.clicked.connect(self.open_hoi)
 
@@ -63,7 +64,12 @@ class Home(QMainWindow):
             self.display_movies(self.all_movies)
             return
 
-        filtered = [m for m in self.all_movies if keyword in m["tenphim"].lower()]
+        filtered = [
+            m for m in self.all_movies 
+            if keyword in m["tenphim"].lower()
+            or keyword in m["dao"].lower()
+            or keyword in m["txtReleaseDate"].lower()
+        ]
         self.display_movies(filtered)
 
     def create_movies_item(self, movie):
@@ -166,6 +172,12 @@ class Home(QMainWindow):
         self.login_page = Login()
         self.login_page.show()
         self.close()
+
+    def open_profil(self):
+        from profil import UserProfilePage
+        self.profil_page = UserProfilePage(self.username, self.users_file, self.data_file)
+        self.profil_page.show()
+
 
     def open_hoi(self):
         self.hoi_page = hoiPage()
