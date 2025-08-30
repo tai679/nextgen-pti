@@ -20,6 +20,9 @@
       <property name="enabled">
        <bool>true</bool>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 255);</string>
+      </property>
       <widget class="QLabel" name="lblFavoriteCount">
        <property name="geometry">
         <rect>
@@ -81,6 +84,9 @@
          <height>31</height>
         </rect>
        </property>
+       <property name="placeholderText">
+        <string>Password</string>
+       </property>
       </widget>
       <widget class="QLineEdit" name="txtNewEmail">
        <property name="geometry">
@@ -90,6 +96,12 @@
          <width>251</width>
          <height>31</height>
         </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="placeholderText">
+        <string>Email</string>
        </property>
       </widget>
       <widget class="QPushButton" name="btnChangeEmail">
@@ -104,6 +116,10 @@
        <property name="text">
         <string>đổi email</string>
        </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../image/gmail.png</normaloff>../image/gmail.png</iconset>
+       </property>
       </widget>
       <widget class="QPushButton" name="btnChangePassword">
        <property name="geometry">
@@ -116,6 +132,10 @@
        </property>
        <property name="text">
         <string>đổi mật khẩu</string>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normaloff>../image/padlock.png</normaloff>../image/padlock.png</iconset>
        </property>
       </widget>
       <widget class="QPushButton" name="btnDeleteAccount">
@@ -190,6 +210,9 @@
      <widget class="QWidget" name="widget_2" native="true">
       <property name="enabled">
        <bool>true</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(255, 255, 255);</string>
       </property>
       <widget class="QListWidget" name="listFavorites">
        <property name="geometry">

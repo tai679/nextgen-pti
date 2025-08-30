@@ -25,7 +25,8 @@ class Home(QMainWindow):
         self.comboGenreFilter.addItem("Tất cả")
         self.comboGenreFilter.addItems([
             "Hành động", "Kinh dị", "Tình cảm", 
-            "Hoạt hình", "Khoa học viễn tưởng","trinh thám","hài","hài tâm linh"
+            "Hoạt hình", "Khoa học viễn tưởng","trinh thám","hài","hài tâm linh",
+            "lịch sử","tài liệu","chiến tranh"
         ])
         self.comboGenreFilter.currentIndexChanged.connect(self.filter_by_category)
 

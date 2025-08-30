@@ -5,9 +5,11 @@
             "password": "admin123",
             "favorites": [
                 2,
-                5
+                5,
+                4,
+                7
             ],
-            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/199368.jpg"
+            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/9d26c902b3b97e8649ff9576fdad3e6a.jpg"
         },
         {
             "username": "tahoang",
@@ -19,36 +21,26 @@
             "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/thumb-1920-88940.jpg"
         },
         {
-            "username": "b",
-            "password": "b",
-            "favorites": [
-                4,
-                2,
-                5
-            ]
-        },
-        {
-            "username": "a",
-            "password": "a",
-            "favorites": [
-                1
-            ],
-            "avatar": "C:/Users/Tai/Downloads/anh nen/7aed024dfd2af9cee0d8271b6a10d039.jpg"
-        },
-        {
             "username": "phamhoangtai123",
             "password": "234",
             "favorites": []
         },
         {
-            "username": "phamhoangtai",
+            "username": "phạm hoàng tài",
             "password": "21112011",
             "favorites": [
                 4,
                 5,
-                3
+                3,
+                6,
+                9
             ],
-            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image/rong.jpg"
+            "avatar": "C:/Users/Tai/Downloads/sản phẩm cuối khoá/image user/pavel-timofeev-pheonix-meme2.jpg"
+        },
+        {
+            "username": "hoàng tài phạm",
+            "password": "phạm 123",
+            "favorites": []
         }
     ]
 }

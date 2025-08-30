@@ -23,6 +23,9 @@
       <height>591</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:rgb(255, 255, 255);</string>
+    </property>
     <widget class="QListWidget" name="listWidget">
      <property name="geometry">
       <rect>

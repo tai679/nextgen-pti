@@ -12,6 +12,7 @@ class DetailPage(QMainWindow):
         self.all_movies = all_movies
         self.data_file = data_file
 
+        # đặt dữ liệu vào các ô
         self.tenphim.setText(movie.get("tenphim", ""))
         self.dao.setText(movie.get("dao", ""))
         self.dienvien.setPlainText(movie.get("dienvien", ""))
@@ -20,13 +21,13 @@ class DetailPage(QMainWindow):
         self.luotxem.setText(movie.get("luotxem", "0"))
         self.thich.setText(movie.get("thich", "0"))
         self.binhluan.setPlainText(movie.get("binhluan", ""))
-
+        # nếu có ảnh đặt vào img ko để trống
         img_path = movie.get("img", "")
         if img_path:
             self.img.setPixmap(QPixmap(img_path))
 
         self.btnSave.clicked.connect(self.save_changes)
-
+    # lấy dữ liệu từ các ô rồi cập nhật lại 
     def save_changes(self):
         self.movie["tenphim"] = self.tenphim.text().strip()
         self.movie["dao"] = self.dao.text().strip()
@@ -36,12 +37,12 @@ class DetailPage(QMainWindow):
         self.movie["luotxem"] = self.luotxem.text().strip()
         self.movie["thich"] = self.thich.text().strip()
         self.movie["binhluan"] = self.binhluan.toPlainText().strip()
-
+        # tìm trong danh sách phim có cùng id rồi cập nhật lại dữ liệu 
         for i, m in enumerate(self.all_movies):
             if m["id"] == self.movie["id"]:
                 self.all_movies[i] = self.movie
                 break
-
+        #mở json rồi ghi lưu vào file
         try:
             with open(self.data_file, "w", encoding="utf-8") as f:
                 json.dump(self.all_movies, f, indent=4, ensure_ascii=False)

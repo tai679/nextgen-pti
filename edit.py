@@ -22,10 +22,11 @@ class CRUDApp(QMainWindow):
         # Thêm thể loại vào combo box
         self.comboGenre_2.addItems([
             "Hành động", "Kinh dị", "Tình cảm",
-            "Hoạt hình", "Khoa học viễn tưởng", "Trinh Thám","hài","hài tâm linh"
+            "Hoạt hình", "Khoa học viễn tưởng", "Trinh Thám","hài","hài tâm linh",
+            "lịch sử","tài liệu","chiến tranh"
         ])
 
-        # Khi click chọn 1 item trong list => hiển thị ra form
+        # Khi click chọn 1 item trong list hiển thị ra form ấn 2 lần xoá
         self.listWidget.itemClicked.connect(self.load_selected_item)
         self.listWidget.itemDoubleClicked.connect(self.clear_inputs)
 
@@ -36,6 +37,7 @@ class CRUDApp(QMainWindow):
         self.home_page.load_movies()
         self.home_page.show()
 
+    # Hàm chọn ảnh
     def choose_image(self):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Chọn ảnh poster", "", "Image Files (*.png *.jpg *.jpeg *.bmp)"
@@ -44,7 +46,7 @@ class CRUDApp(QMainWindow):
             self.selected_image_path = file_path
             pixmap = QPixmap(file_path).scaled(150, 200)
             self.anhthu.setPixmap(pixmap)
-
+    # lưu mở file để đọc dữ liệu
     def load_data(self):
         try:
             with open(self.data_file, "r", encoding="utf-8") as f:
@@ -52,6 +54,7 @@ class CRUDApp(QMainWindow):
         except (FileNotFoundError, json.JSONDecodeError):
             self.data = []
 
+        # Hiển thị dữ liệu trong list 
         self.listWidget.clear()
         for item in self.data:
             self.listWidget.addItem(QListWidgetItem(
@@ -61,6 +64,7 @@ class CRUDApp(QMainWindow):
 
         QApplication.processEvents()
 
+    # lưu dữ liệu
     def save_data(self):
         try:
             with open(self.data_file, "w", encoding="utf-8") as f:
@@ -116,7 +120,7 @@ class CRUDApp(QMainWindow):
         }
 
         for key, value in inputs.items():
-            if value or key == "rating":  # luôn cập nhật rating
+            if value or key == "rating": 
                 self.data[selected][key] = value
 
         if self.selected_image_path:

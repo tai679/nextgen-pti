@@ -82,6 +82,9 @@ class UserProfilePage(QMainWindow):
 
         layout.addWidget(QLabel(f"{movie.get('tenphim', 'Không rõ')}"))
         layout.addWidget(QLabel(f"Đạo diễn: {movie.get('dao', 'Không rõ')}"))
+        rating = movie.get("rating", 0)
+        stars = "⭐" * int(rating) if rating else "Chưa có đánh giá"
+        layout.addWidget(QLabel(f"Đánh giá: {stars}"))
 
         btn_detail = QPushButton("Xem chi tiết")
         btn_detail.clicked.connect(lambda _, m=movie: self.open_detail(m))
